@@ -1,0 +1,16 @@
+git@bitbucket.org:borang/garmin-sundial.git
+git@bitbucket.org:borang/image-processing.git
+git@bitbucket.org:borang/linux-pictures.git
+git@bitbucket.org:borang/versioned-media-library.git
+git@bitbucket.org:borang/wordpress.goegetap.git
+git@bitbucket.org:borang/x-lost-found.git
+git@bitbucket.org:symsuite/bpmn-analysis.git
+git@bitbucket.org:symsuite/kts-jira-extract-transform-sym.git
+git@bitbucket.org:wissenswandler/jira-admin.git
+git@bitbucket.org:wissenswandler/kts-jira-extract-transform-bogo.git
+git@bitbucket.org:wissenswandler/kts-jira-extract-transform.git
+git@bitbucket.org:wissenswandler/kts-jira-json-viewer.git
+git@bitbucket.org:wissenswandler/kts-jira-webhook-receiver.git
+git@github.com:borango/borango.github.io.git
+git@github.com:borango/managed-scripts.git
+git@github.com:wissenswandler/wissenswandler.github.io.git
