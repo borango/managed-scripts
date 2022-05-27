@@ -75,7 +75,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls -lh --color=auto'
+    alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -91,6 +91,10 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias ltr='ls -ltr'
+
+# BoGo alias
+alias xcsel='xclip -sel clip'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -126,3 +130,11 @@ export EDITOR="$VISUAL"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+function title() {
+    # Set terminal tab title. Usage: title "new tab name"
+    prefix=${PS1%%\\a*}                  # Everything before: \a
+    search=${prefix##*;}                 # Eeverything after: ;
+    esearch="${search//\\/\\\\}"         # Change \ to \\ in old title
+    PS1="${PS1/$esearch/$@}"             # Search and replace old with new
+}
