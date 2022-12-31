@@ -131,6 +131,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+export JEKYLL_GITHUB_TOKEN=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
+
 function title() {
     # Set terminal tab title. Usage: title "new tab name"
     prefix=${PS1%%\\a*}                  # Everything before: \a

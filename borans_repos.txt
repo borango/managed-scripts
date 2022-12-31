@@ -1,3 +1,6 @@
+git@bitbucket.org:atlassian/forge-jql-editor-custom-ui.git
+git@bitbucket.org:atlassian/forge-ui-modifications-example.git
+git@bitbucket.org:atlassian/todo-app-custom-ui.git
 git@bitbucket.org:borang/garmin-sundial.git
 git@bitbucket.org:borang/image-processing.git
 git@bitbucket.org:borang/linux-pictures.git
@@ -6,11 +9,20 @@ git@bitbucket.org:borang/wordpress.goegetap.git
 git@bitbucket.org:borang/x-lost-found.git
 git@bitbucket.org:symsuite/bpmn-analysis.git
 git@bitbucket.org:symsuite/kts-jira-extract-transform-sym.git
+git@bitbucket.org:wissenswandler/atlassian-forge-templates.git
 git@bitbucket.org:wissenswandler/jira-admin.git
+git@bitbucket.org:wissenswandler/kts-atlassian-forge.git
 git@bitbucket.org:wissenswandler/kts-jira-extract-transform-bogo.git
 git@bitbucket.org:wissenswandler/kts-jira-extract-transform.git
 git@bitbucket.org:wissenswandler/kts-jira-json-viewer.git
 git@bitbucket.org:wissenswandler/kts-jira-webhook-receiver.git
+git@bitbucket.org:wissenswandler/kts-node.git
+git@bitbucket.org:wissenswandler/wissenswandler.bitbucket.io.git
+git@github.com:borango/borango.github.io.git
 git@github.com:borango/borango.github.io.git
 git@github.com:borango/managed-scripts.git
+git@github.com:kward/log4sh.git
+git@github.com:wissenswandler/visual-brain.git
 git@github.com:wissenswandler/wissenswandler.github.io.git
+https://github.com/magjac/d3-graphviz.git
+https://github.com/nvm-sh/nvm.git
