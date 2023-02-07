@@ -145,3 +145,7 @@ function title() {
     esearch="${search//\\/\\\\}"         # Change \ to \\ in old title
     PS1="${PS1/$esearch/$@}"             # Search and replace old with new
 }
+
+# begin forge completion
+source /home/boran/.forge/completion.sh
+# end forge completion
