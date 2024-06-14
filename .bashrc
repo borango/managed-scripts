@@ -149,3 +149,6 @@ function title() {
 # begin forge completion
 source /home/boran/.forge/completion.sh
 # end forge completion
+
+
+export PATH="$PATH:$HOME/managed-scripts"
