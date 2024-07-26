@@ -1,0 +1,67 @@
+#!/bin/bash
+
+defaultmodel=tinyllama
+
+# test whether at least one argument is provided
+if [ $# -lt 1 ]; then
+  echo "Usage: ai <prompt> [<model> (default: $defaultmodel)]"
+  exit 1
+fi
+
+prompt=$1
+
+model=$2
+if [ -z "$model" ]; then
+  model=$defaultmodel
+fi
+
+ai_run_one() {
+defaultmodel=tinyllama
+
+# test whether at least one argument is provided
+if [ $# -lt 1 ]; then
+  echo "Usage: ai <prompt> [<model> (default: $defaultmodel)]"
+  exit 1
+fi
+
+prompt=$1
+
+model=$2
+if [ -z "$model" ]; then
+  model=$defaultmodel
+fi
+
+if [[ $model == gpt* ]]; then
+  provider="openai-run"
+else
+  provider="ollama run"
+fi
+
+# make following prompt appear light grey:
+echo -e "\033[0;37m$provider $model \"$prompt\"\033[0m"
+
+$provider $model "$prompt"
+}
+
+
+if [[ "$model" =~ ^@ ]]; then
+
+  filename=${model:1}
+
+  # Check if the file exists and is readable
+  if [ ! -f "$filename" ]; then
+      echo "Error: File '$filename' not found"
+      exit 1
+  elif [ ! -r "$filename" ]; then
+      echo "Error: File '$filename' not readable"
+      exit 1
+  fi
+
+  while read line; do ai_run_one "$prompt" $line; echo result: $?; done < $filename
+
+else
+                      ai_run_one "$prompt" $model
+fi
+exit 0
+
+
