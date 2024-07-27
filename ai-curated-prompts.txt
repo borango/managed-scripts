@@ -1,0 +1,29 @@
+#
+# Mathematics / Logic
+#
+
+did Gödel proove that any sufficiently capable logical system MAY or MUST be incomplete? Answer with one word only.
+
+#
+# Mathematics / Logic
+# MULTILINGUAL
+#
+
+please test the semantic equality (not identity) of following two statements in natural (not programming) language: "true" and "vrai". treat literal translations in different languages as equal. answer with "equal" or "different" only, plus a one-line explanation.
+
+#
+# Philosophy / Conversation
+# GERMAN
+#
+
+wer bin ich? antwort in 5 worten, bitte
+
+wer rasiert den barbier, der alle männer rasiert die sich nicht selbst rasieren? Antwort in 5 Worten, bitte.
+
+#
+# Programming
+# JAVASCRIPT
+#
+
+filter a javascript array to contain only unique values. give me the simplest solution but dont create a Set for this purpose. no comments, no explanations - just return pure javascript.
+
