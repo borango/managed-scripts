@@ -16,52 +16,72 @@ if [ -z "$model" ]; then
 fi
 
 ai_run_one() {
-defaultmodel=tinyllama
+  defaultmodel=tinyllama
 
-# test whether at least one argument is provided
-if [ $# -lt 1 ]; then
-  echo "Usage: ai <prompt> [<model> (default: $defaultmodel)]"
-  exit 1
-fi
-
-prompt=$1
-
-model=$2
-if [ -z "$model" ]; then
-  model=$defaultmodel
-fi
-
-if [[ $model == gpt* ]]; then
-  provider="openai-run"
-else
-  provider="ollama run"
-fi
-
-# make following prompt appear light grey:
-echo -e "\033[0;37m$provider $model \"$prompt\"\033[0m"
-
-$provider $model "$prompt"
-}
-
-
-if [[ "$model" =~ ^@ ]]; then
-
-  filename=${model:1}
-
-  # Check if the file exists and is readable
-  if [ ! -f "$filename" ]; then
-      echo "Error: File '$filename' not found"
-      exit 1
-  elif [ ! -r "$filename" ]; then
-      echo "Error: File '$filename' not readable"
-      exit 1
+  # test whether at least one argument is provided
+  if [ $# -lt 1 ]; then
+    echo "Usage: ai <prompt> [<modelname>|<modelfile> (default: $defaultmodel)]"
+    exit 1
   fi
 
-  while read line; do ai_run_one "$prompt" $line; echo result: $?; done < $filename
+  prompt=$1
 
-else
-                      ai_run_one "$prompt" $model
-fi
-exit 0
+  model=$2
+  if [ -z "$model" ]; then
+    model=$defaultmodel
+  fi
+
+  if [[ $model == gpt* ]]; then
+    provider="openai-run"
+  else
+    provider="ollama-run"
+  fi
+
+  echo -e "\033[3;37m$provider $model\033[0m"
+
+  $provider $model "$prompt"
+}
+
+echo # blank line to separate responses from the command line
+
+if [ -f "$model" ]; then
+
+  models=$model
+
+  while read model; do ai_run_one "$prompt" $model; done < $models
+
+else # $model is not a file but a specific model name
+
+                       ai_run_one "$prompt" $model
+
+fi # end if $model is a file
 
 
+# BONUS: ANSI escape codes for text formatting
+# 30	Black
+# 31	Red
+# 32	Green
+# 33	Yellow
+# 34	Blue
+# 35	Magenta
+# 36	Cyan
+# 37	White
+# 90	Bright Black
+# 91	Bright Red
+# 92	Bright Green
+# 93	Bright Yellow
+# 94	Bright Blue
+# 95	Bright Magenta
+# 96	Bright Cyan
+# 97	Bright White
+# 39	Default foreground color
+# 49	Default background color
+# 38;5;0 to 38;5;255	256-color mode foreground color
+# 48;5;0 to 48;5;255	256-color mode background color
+# 38;2;R;G;B to 38;2;R;G;B	True color foreground color
+# 48;2;R;G;B to 48;2;R;G;B	True color background color
+# 0	Reset / Normal
+# 1	Bold or increased intensity
+# 2	Faint (decreased intensity)
+# 3	Italic
+# 4	Underline

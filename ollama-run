@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# see https://github.com/ollama/ollama/blob/main/docs/faq.md
+
+# if no arguments then print usage
+if [ -z "$1" ]; then
+  echo "Usage: ollama-run.sh [model] <prompt>"
+  exit 1
+fi
+
+if [ -z "$2" ]; then
+  model="tinyllama"
+  prompt="$1"
+else
+  model="$1"
+  prompt="$2"
+fi
+
+# streaming response:
+# curl http://localhost:11434/api/generate \
+#  --data "$( jq -cn '{  "model": $ARGS.positional[0], "prompt": $ARGS.positional[1]  }' --args "$model" "$prompt" )" \
+
+# openai-like API
+curl -s http://localhost:11434/v1/chat/completions \
+  --header 'Content-Type: application/json' \
+  --data "$( jq -cn '{  "model": $ARGS.positional[0], "messages": [ { "role": "user", "content": $ARGS.positional[1] } ]  }' --args "$model" "$prompt" )" \
+| jq -r '.choices[].message.content'
+
+# echo an empty line to be compatible with ollama CLI output and also to separate responses
+echo
