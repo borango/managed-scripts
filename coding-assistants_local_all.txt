@@ -1,0 +1,5 @@
+deepseek-coder
+codegemma
+codegeex4
+deepseek-coder-v2
+starcoder2:15b

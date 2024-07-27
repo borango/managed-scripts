@@ -1,0 +1,4 @@
+granite-code:latest
+codegemma:latest
+codegeex4:latest
+deepseek-coder-v2:latest

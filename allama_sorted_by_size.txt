@@ -1,0 +1,13 @@
+qwen2:0.5b
+tinyllama:latest
+deepseek-coder:latest
+qwen2:1.5b
+stablelm2:latest
+moondream:latest
+mistral:latest
+llama3.1:latest
+codegemma:latest
+codegeex4:latest
+glm4:latest
+deepseek-coder-v2:latest
+starcoder2:15b

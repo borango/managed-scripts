@@ -56,6 +56,8 @@ else # $model is not a file but a specific model name
 
 fi # end if $model is a file
 
+echo $prompt >> ai-prompts.txt
+echo         >> ai-prompts.txt
 
 # BONUS: ANSI escape codes for text formatting
 # 30	Black

@@ -20,6 +20,12 @@ fi
 # curl http://localhost:11434/api/generate \
 #  --data "$( jq -cn '{  "model": $ARGS.positional[0], "prompt": $ARGS.positional[1]  }' --args "$model" "$prompt" )" \
 
+if ! curl -s http://localhost:11434/api/tags | jq -r '.models[].model' | grep -q $model; then
+  echo -e "\033[3;37mskipping $model because is has not been pulled yet\033[0m"
+  echo 
+  exit 1
+fi
+
 # openai-like API
 curl -s http://localhost:11434/v1/chat/completions \
   --header 'Content-Type: application/json' \
