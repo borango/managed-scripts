@@ -1,14 +1,34 @@
 #!/bin/bash
 
-defaultmodel=allamas_sorted_by_size.txt
+defaultmodel=$(dirname $0)/allamas_sorted_by_size.txt
 
-# test whether at least one argument is provided
+echo_usage() {
+  echo "Usage: ai [replay] <prompt> [<model> (default: $defaultmodel)]"
+}
+
+# test whether at least one argument (the prompt) is provided
 if [ $# -lt 1 ]; then
-  echo "Usage: ai <prompt> [<model> (default: $defaultmodel)]"
+  echo_usage
   exit 1
 fi
 
 prompt=$1
+
+if [ "$prompt" == "replay" ]; then # lookup the actual prompt in the curated list
+  shift
+  if [ $# -lt 1 ]; then # test whether the prompt keyword is provided
+    echo_usage
+    echo "          ( missing prompt keyword after 'replay' )"
+    exit 1
+  fi
+  keyword=$1
+  prompt="$(grep $keyword $(dirname $0)/ai-prompts-curated.txt)"
+  if [ -z "$prompt" ]; then
+    echo -e "\e[31mKeyword '$keyword' not found in ai-prompts-curated.txt\e[0m\n" > /dev/stderr
+    exit 1
+  fi
+  isreplay=true
+fi
 
 model=$2
 if [ -z "$model" ]; then
@@ -16,12 +36,17 @@ if [ -z "$model" ]; then
 fi
 
 # add the prompt to the prompts file ONLY if it wasn't already there
-if ! grep -Fq "$prompt"   ai-prompts.txt; then
-          echo $prompt >> ai-prompts.txt
-          echo         >> ai-prompts.txt
-  	  echo -e "\033[3;37m(new prompt added to ai-prompts.txt)\033[0m" >> /dev/stderr
+# and if we are not in replay mode alredy
+if [ -z "$isreplay" ]; then
+  if ! grep -Fq "$prompt"   ai-prompts.txt; then
+            echo $prompt >> ai-prompts.txt
+            echo         >> ai-prompts.txt
+            echo -e "\033[3;37m(new prompt added to ai-prompts.txt)\033[0m" >> /dev/stderr
+  else
+            echo -e "\033[3;37m(prompt already in ai-prompts.txt)  \033[0m" >> /dev/stderr
+  fi
 else
-	  echo -e "\033[3;37m(prompt already in ai-prompts.txt)  \033[0m" >> /dev/stderr
+  echo -e "\033[3;37mai \"$prompt\" $model\033[0m"
 fi
 
 ai_run_one() {

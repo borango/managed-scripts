@@ -9,8 +9,7 @@ if [ -z "$keyword" ]; then
     exit 1
 fi
 
-
-prompt="$(grep $keyword ai-prompts-curated.txt)"
+prompt="$(grep $keyword $(dirname $0)/ai-prompts-curated.txt)"
 
 if [ -z "$prompt" ]; then
   echo -e "\e[31mKeyword '$keyword' not found in ai-prompts-curated.txt\e[0m\n" > /dev/stderr

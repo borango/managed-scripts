@@ -4,7 +4,7 @@ starcoder2:latest
 granite-code:latest
 codellama:latest
 codeqwen:latest
-codegemma:latest
+codegemma:2b
 codegeex4:latest
 deepseek-coder-v2:latest
 starcoder2:15b
