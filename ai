@@ -1,6 +1,6 @@
 #!/bin/bash
 
-defaultmodel=tinyllama
+defaultmodel=allamas_sorted_by_size.txt
 
 # test whether at least one argument is provided
 if [ $# -lt 1 ]; then
@@ -13,6 +13,15 @@ prompt=$1
 model=$2
 if [ -z "$model" ]; then
   model=$defaultmodel
+fi
+
+# add the prompt to the prompts file ONLY if it wasn't already there
+if ! grep -Fq "$prompt"   ai-prompts.txt; then
+          echo $prompt >> ai-prompts.txt
+          echo         >> ai-prompts.txt
+  	  echo -e "\033[3;37m(new prompt added to ai-prompts.txt)\033[0m" >> /dev/stderr
+else
+	  echo -e "\033[3;37m(prompt already in ai-prompts.txt)  \033[0m" >> /dev/stderr
 fi
 
 ai_run_one() {
@@ -55,9 +64,6 @@ else # $model is not a file but a specific model name
                        ai_run_one "$prompt" $model
 
 fi # end if $model is a file
-
-echo $prompt >> ai-prompts.txt
-echo         >> ai-prompts.txt
 
 # BONUS: ANSI escape codes for text formatting
 # 30	Black

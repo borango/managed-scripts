@@ -1,7 +1,0 @@
-qwen2:0.5b
-qwen2:1.5b
-tinyllama
-codegemma:2b
-mistral
-llama3.1
-glm4

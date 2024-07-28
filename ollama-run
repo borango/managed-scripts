@@ -29,7 +29,7 @@ fi
 # openai-like API
 curl -s http://localhost:11434/v1/chat/completions \
   --header 'Content-Type: application/json' \
-  --data "$( jq -cn '{  "model": $ARGS.positional[0], "messages": [ { "role": "user", "content": $ARGS.positional[1] } ]  }' --args "$model" "$prompt" )" \
+  --data "$( jq -cn '{  "model": $ARGS.positional[0], options: { num_predict: 10 }, "messages": [ { "role": "user", "content": $ARGS.positional[1] } ]  }' --args "$model" "$prompt" )" \
 | jq -r '.choices[].message.content'
 
 # echo an empty line to be compatible with ollama CLI output and also to separate responses
