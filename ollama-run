@@ -16,15 +16,15 @@ else
   prompt="$2"
 fi
 
-# streaming response:
-# curl http://localhost:11434/api/generate \
-#  --data "$( jq -cn '{  "model": $ARGS.positional[0], "prompt": $ARGS.positional[1]  }' --args "$model" "$prompt" )" \
-
 if ! curl -s http://localhost:11434/api/tags | jq -r '.models[].model' | grep -q $model; then
-  echo -e "\033[3;37m  skipping $model because is has not been pulled yet\033[0m"
+  echo -e "\033[3;37m  skipping $model because it has not been pulled yet\033[0m" >&2
   echo 
   exit 1
 fi
+
+# streaming response:
+# curl http://localhost:11434/api/generate \
+#  --data "$( jq -cn '{  "model": $ARGS.positional[0], "prompt": $ARGS.positional[1]  }' --args "$model" "$prompt" )" \
 
 # openai-like API
 curl -s http://localhost:11434/v1/chat/completions \

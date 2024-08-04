@@ -24,7 +24,7 @@ if [ "$prompt" == "replay" ]; then # lookup the actual prompt in the curated lis
   keyword=$1
   prompt="$(grep $keyword $(dirname $0)/ai-prompts-curated.txt)"
   if [ -z "$prompt" ]; then
-    echo -e "\e[31mKeyword '$keyword' not found in ai-prompts-curated.txt\e[0m\n" > /dev/stderr
+    echo -e "\e[31mKeyword '$keyword' not found in ai-prompts-curated.txt\e[0m\n" >&2
     exit 1
   fi
   isreplay=true
@@ -41,9 +41,9 @@ if [ -z "$isreplay" ]; then
   if ! grep -Fq "$prompt"   ai-prompts.txt; then
             echo $prompt >> ai-prompts.txt
             echo         >> ai-prompts.txt
-            echo -e "\033[3;37m(new prompt added to ai-prompts.txt)\033[0m" >> /dev/stderr
+            echo -e "\033[3;37m(new prompt added to ai-prompts.txt)\033[0m" >&2
   else
-            echo -e "\033[3;37m(prompt already in ai-prompts.txt)  \033[0m" >> /dev/stderr
+            echo -e "\033[3;37m(prompt already in ai-prompts.txt)  \033[0m" >&2
   fi
 else
   echo -e "\033[3;37mai \"$prompt\" $model\033[0m"
