@@ -1,1 +1,1 @@
-export PATH="$PATH:$HOME/managed-scripts"
+export PATH="$PATH:$(dirname ${BASH_SOURCE[0]})"
