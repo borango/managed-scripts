@@ -16,18 +16,21 @@ else
   prompt="$2"
 fi
 
-if ! curl -s http://localhost:11434/api/tags | jq -r '.models[].model' | grep -q $model; then
-  echo -e "\033[3;37m  skipping $model because it has not been pulled yet\033[0m" >&2
+# set OLLAMA_HOST if not defined
+[ -z "$OLLAMA_HOST" ] && OLLAMA_HOST=localhost:11434
+
+if ! curl -s http://$OLLAMA_HOST/api/tags | jq -r '.models[].model' | grep -q $model; then
+	echo -e "\033[3;37m  skipping $model because it is not available (model not pulled or service unavailable)\033[0m" >&2
   echo 
   exit 1
 fi
 
 # streaming response:
-# curl http://localhost:11434/api/generate \
+# curl http://$OLLAMA_HOST/api/generate \
 #  --data "$( jq -cn '{  "model": $ARGS.positional[0], "prompt": $ARGS.positional[1]  }' --args "$model" "$prompt" )" \
 
 # openai-like API
-curl -s http://localhost:11434/v1/chat/completions \
+curl -s http://$OLLAMA_HOST/v1/chat/completions \
   --header 'Content-Type: application/json' \
   --data "$( jq -cn '{  "model": $ARGS.positional[0], options: { num_predict: 10 }, "messages": [ { "role": "user", "content": $ARGS.positional[1] } ]  }' --args "$model" "$prompt" )" \
 | jq -r '.choices[].message.content'
