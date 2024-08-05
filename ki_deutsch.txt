@@ -1,4 +1,0 @@
-stablelm2
-glm4
-mistral
-gpt-4o-mini
