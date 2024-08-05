@@ -18,6 +18,7 @@ git@github.com:borango/borango.github.io.git
 git@github.com:borango/causality-course.git
 git@github.com:borango/eco-travel.git
 git@github.com:borango/managed-scripts.git
+git@github.com:borango/think-twice.git
 git@github.com:wissenswandler/wissenswandler.github.io.git
 https://github.com/magjac/d3-graphviz.git
 https://github.com/nvm-sh/nvm.git
