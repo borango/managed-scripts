@@ -1,0 +1,13 @@
+apt install neovim
+apt install vim
+apt install git
+apt install jq
+apt install nodejs-lts
+apt install wget
+apt install proot-distro
+apt install bash-completion
+apt install golang
+apt install cmake
+apt install screen
+apt install which
+apt install silversearcher-ag
