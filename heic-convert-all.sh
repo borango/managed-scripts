@@ -8,7 +8,7 @@ then
 fi
 
 # Loop through all HEIC files in the current directory
-for file in *.heic; do
+for file in *.hei*; do
     # Get the base name of the file without the extension
     base_name="${file%.*}"
     # Construct the output file name with jpg extension
