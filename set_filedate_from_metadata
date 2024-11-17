@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+  echo "Usage: $0 <mp4_file>"
+  exit 1
+fi
+
+mp4_file="$1"
+
+# Get creation date from metadata using ffprobe
+creation_date=$(ffprobe -v quiet -show_entries format_tags=creation_time -of default=noprint_wrappers=1:nokey=1 "$mp4_file")
+
+# Set file-modified-date to creation date
+touch -c -t "$(date -d "$creation_date" +"%Y%m%d%H%M.%S")" "$mp4_file"
+
+echo "File-modified-date set to the creation date: $creation_date"
