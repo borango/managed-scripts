@@ -12,6 +12,7 @@ apt install bash-completion
 apt install silversearcher-ag
 apt install screen
 apt install proot-distro
+apt install traceroute
 
 apt install golang
 apt install cmake
