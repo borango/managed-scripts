@@ -8,7 +8,8 @@ set    shiftwidth=2
 
 set mouse=a
 
-set backupcopy=yes "write backup separately, don't rename = keep original file = support file watchers such as dev servers"
+set backupcopy=yes
+"write backup separately, don't rename = keep original file = support file watchers such as dev servers"
 
 "
 " INCLUDE in ~/.vimrc as follows (uncomment last line):
