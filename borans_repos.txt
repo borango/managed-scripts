@@ -7,6 +7,7 @@ git@bitbucket.org:borang/x-lost-found.git
 git@bitbucket.org:symsuite/bpmn-analysis.git
 git@bitbucket.org:symsuite/kts-jira-extract-transform-sym.git
 git@bitbucket.org:wissenswandler/atlassian-forge-templates.git
+git@bitbucket.org:wissenswandler/gpio.git
 git@bitbucket.org:wissenswandler/jira-admin.git
 git@bitbucket.org:wissenswandler/kts-jira-extract-transform-bogo.git
 git@bitbucket.org:wissenswandler/kts-jira-extract-transform.git
