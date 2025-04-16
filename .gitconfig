@@ -1,7 +1,11 @@
 [user]
 	email = boran@goegetap.name
-	name = Boran Gögetap
+	name  = Boran Gögetap
 [alias]
-	pushall = !git remote | xargs -L1 git push --all
+	pushall         = !git remote | xargs -L1 git push --all
 [init]
-	defaultBranch = main
+	defaultBranch   = main
+
+[push]
+	autoSetupRemote = true
+
