@@ -1,0 +1,7 @@
+[user]
+	email = boran@goegetap.name
+	name = Boran Gögetap
+[alias]
+	pushall = !git remote | xargs -L1 git push --all
+[init]
+	defaultBranch = main
