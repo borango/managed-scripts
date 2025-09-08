@@ -1,10 +1,12 @@
 [user]
 	email = boran@goegetap.name
-	name = Boran
+	name  = Boran
 	signingkey = /home/boran/.ssh/id_rsa.pub
 [alias]
-	pushall = !git remote | xargs -L1 git push --all
+	pushall         = !git remote | xargs -L1 git push --all
 [init]
 	defaultBranch = main
 [merge "ours"]
 	driver = true
+[push]
+	autoSetupRemote = true
