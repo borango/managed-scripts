@@ -6,6 +6,10 @@ set       tabstop=2
 set   softtabstop=2
 set    shiftwidth=2
 
+"
+"   show statusline only with 2 or more open windows
+set laststatus=1
+
 set mouse=a
 
 set backupcopy=yes
