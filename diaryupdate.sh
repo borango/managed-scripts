@@ -9,13 +9,11 @@ TODAY=$(date +%Y-%m-%d)
 DIARY_FILE="$DIARY_DIR/$TODAY.md"
 
 # Get current user's Git identity (name or email)
-GIT_USER=$(git config user.name)
-if [ -z "$GIT_USER" ]; then
-    GIT_USER=$(git config user.email)
-fi
+#GIT_USER=$(git config user.name)
+GIT_USER=$(git config user.email)
 
 # Initialize diary file if it doesn't exist
-if [ ! -f "$DIARY_FILE" ]; then
+if [ ! -f                             "$DIARY_FILE" ]; then
     echo "# Diary Entry for $TODAY" > "$DIARY_FILE"
 fi
 
@@ -33,9 +31,10 @@ find "$HOME" -type d -name ".git" -not -path "*/.git/*" | while read -r git_dir;
     # Navigate to repo and pull latest changes
     echo -e "\tharvesting ..."
     cd "$repo_dir" || continue
-    git fetch # --all 
+    git fetch # get all remote branches from current remote’s fetch refspec
 
     # Get commits from all branches by the current user from the last 24 hours
+    # (includes commits from remote"-tracking" branches)
     commits=$(git log --all --author="$GIT_USER" --since="24 hours ago" --pretty=format:"%ct %d %s")
 
     # Process each commit
@@ -50,13 +49,13 @@ find "$HOME" -type d -name ".git" -not -path "*/.git/*" | while read -r git_dir;
             else
                 prefix="yesterday: "
             fi
-            topic="$prefix $repo_name: $commit_message"
-            header="## $topic"
+            topic="$repo_name: $commit_message"
+            header="## $prefix $topic"
 
             # Check if header already exists to ensure idempotency
-            if ! grep -Fx "$header"        "$DIARY_FILE" > /dev/null; then
-                  echo -e "$header\n\n" >> "$DIARY_FILE"
-		  echo  "+ $topic"
+            if ! grep -F "$topic"         "$DIARY_FILE" > /dev/null; then # the topic could be denoted to a simple paragraph
+              echo -e "$header\n\n" >> "$DIARY_FILE"
+	            echo  "+ $prefix $topic"
             fi
         fi
     done <<< "$commits"
