@@ -10,3 +10,5 @@
 	driver = true
 [push]
 	autoSetupRemote = true
+[gpg]
+	format = ssh
