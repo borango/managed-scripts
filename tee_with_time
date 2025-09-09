@@ -1,0 +1,5 @@
+#!/bin/bash
+while IFS= read -r line; do
+  echo "$(date '+%H:%M') | $line" > /dev/tty
+  echo "$line"
+done
