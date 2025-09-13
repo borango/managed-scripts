@@ -1,0 +1,1 @@
+cat _replace_in | xargs sed -i "s/$(< _replace_what )/$1/g"

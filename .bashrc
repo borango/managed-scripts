@@ -8,6 +8,7 @@ alias ltr='ls -ltr'
 # BoGo alias-es-es
 alias xcsel='xclip -sel clip'
 alias ag="ag $* --hidden"
+alias gitus="git status"
 #
 #         VISUAL is typically configured in the main .bashrc, per machine
 alias v='$VISUAL'
