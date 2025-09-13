@@ -8,6 +8,7 @@ apt install rsync
 apt install wget
 apt install netcat-openbsd
 apt install traceroute
+apt install socat
 
 apt install bash-completion
 apt install man
