@@ -1,0 +1,1 @@
+ssh 10.3.2.1 "/interface wireless registration-table print stats"
