@@ -2,14 +2,15 @@
 
 export SEARCHSTRING=$1
 
-EXCLUDES="--ignore _replace_in --ignore replace.sh --ignore .storage/core.restore_state"
+EXCLUDES="-p .ignore-for-replaces"
 
 echo
 
-ag -rFc --hidden $EXCLUDES "$SEARCHSTRING" 2> /dev/null               # count and show colored output to user
-ag -rFl --hidden $EXCLUDES "$SEARCHSTRING" 2> /dev/null > _replace_in # save only filenames with search hits
+ag -rc --hidden $EXCLUDES "$SEARCHSTRING" 2> /dev/null               # count and show colored output to user
+ag -rl --hidden $EXCLUDES "$SEARCHSTRING" 2> /dev/null > _replace_in # save only filenames with search hits
 
 echo "$SEARCHSTRING" > _replace_what
 
 echo
 echo "$SEARCHSTRING saved for replace_with <with-string>"
+echo
