@@ -13,8 +13,8 @@ DIARY_FILE="$DIARY_DIR/$TODAY.md"
 GIT_USER=$(git config user.email)
 
 # Initialize diary file if it doesn't exist
-if [ ! -f                             "$DIARY_FILE" ]; then
-    echo "# Diary Entry for $TODAY" > "$DIARY_FILE"
+if [ ! -f                                  "$DIARY_FILE" ]; then
+    echo -e "# Diary Entry for $TODAY\n" > "$DIARY_FILE"
 fi
 
 # Find all Git repositories in home directory (modify path as needed)
@@ -47,10 +47,10 @@ find "$HOME" -type d -name ".git" -not -path "*/.git/*" | while read -r git_dir;
             if [ "$commit_date" = "$TODAY" ]; then
                 prefix=""
             else
-                prefix="yesterday: "
+                prefix="yesterday\n"
             fi
             topic="$repo_name: $commit_message"
-            header="## $prefix $topic"
+            header="$prefix## $topic"
 
             # Check if header already exists to ensure idempotency
             if ! grep -F "$topic"         "$DIARY_FILE" > /dev/null; then # the topic could be denoted to a simple paragraph
@@ -65,5 +65,3 @@ done
 if ! grep -Fx "## [$TODAY] Non-Git Notes" "$DIARY_FILE" > /dev/null; then
     echo -e "\n## [$TODAY] Non-Git Notes\n" >> "$DIARY_FILE"
 fi
-
-echo "Diary updated: $DIARY_FILE"
