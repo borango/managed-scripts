@@ -11,4 +11,4 @@
 [push]
 	autoSetupRemote = true
 [gpg]
-	format = ssh
+#	format = ssh
