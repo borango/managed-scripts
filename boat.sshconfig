@@ -1,0 +1,20 @@
+Host cerbo
+  Hostname 10.3.2.48
+  User root
+
+Host pi10bt
+  Hostname 10.9.11.1
+Host pi10
+  Hostname 10.3.2.10
+Host pi11
+  Hostname 10.3.2.11
+Host pi12
+  Hostname 10.3.2.12
+
+Host pi3
+  Hostname 10.3.2.3
+
+Host pi4
+  Hostname 10.3.2.4
+Host pi40
+  Hostname 10.3.2.40

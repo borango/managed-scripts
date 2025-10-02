@@ -1,0 +1,18 @@
+Host accas
+  HostName 10.3.2.2        # Mikrotik
+# HostName 192.168.160.227 # s9 
+# HostName 192.168.43.34   # atom
+
+Host s9
+  Port 8022
+# HostName 10.5.4.115
+# HostName 192.168.160.112 # s9
+# HostName 192.168.140.    # s7
+# HostName 192.168.178.116 # Unterdießen
+# HostName 192.168.43.48   # atom 
+# HostName 192.168.1.113   # Saint-Nic
+  HostName 10.3.2.90       # Mikrotik
+
+Host s99
+  Port 8022
+  HostName 10.9.8.90       # Wireguard

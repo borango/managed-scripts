@@ -1,0 +1,20 @@
+Host wetbox
+  HostName 34.31.25.76
+
+Host nase
+  Port 2223
+  HostName goegetap.synology.me
+
+Host wind
+  Port 2228
+  HostName 10.5.4.8
+# HostName cmdbg-14.i234.me
+
+
+#
+# archived
+#
+Host kgo
+  HostName kgo.symsuite.de
+  User kgosymsu
+  Port 222
