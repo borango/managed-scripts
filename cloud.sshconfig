@@ -4,6 +4,7 @@ Host wetbox
 Host nase
   Port 2223
   HostName goegetap.synology.me
+# Host xxxxNASE.synology.me
 
 Host wind
   Port 2228

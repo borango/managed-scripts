@@ -10,6 +10,8 @@ Host pi11
   Hostname 10.3.2.11
 Host pi12
   Hostname 10.3.2.12
+Host pi14
+  Hostname 10.3.2.14
 
 Host pi3
   Hostname 10.3.2.3

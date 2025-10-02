@@ -3,6 +3,15 @@ Host accas
 # HostName 192.168.160.227 # s9 
 # HostName 192.168.43.34   # atom
 
+Host s7
+  Port 8022
+# HostName 192.168.127.214 # s9 
+# HostName 10.5.4.103      # Sagbach
+# HostName 192.168.43.118
+# HostName 192.168.178.117 # Gewerbering
+# HostName 192.168.1.114   # Saint-Nic
+  HostName 10.3.2.70       # Mikrotik
+
 Host s9
   Port 8022
 # HostName 10.5.4.115
