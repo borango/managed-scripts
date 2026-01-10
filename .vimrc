@@ -15,6 +15,12 @@ set mouse=a
 set backupcopy=yes
 "write backup separately, don't rename = keep original file = support file watchers such as dev servers"
 
+
+:nnoremap <leader>ce :Copilot enable<CR>
+:nnoremap <leader>cd :Copilot disable<CR>
+:inoremap <leader>cd <Esc>:Copilot disable<CR>a
+
+
 "
 " INCLUDE in ~/.vimrc as follows (uncomment last line):
 "
