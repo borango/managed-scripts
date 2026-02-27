@@ -10,6 +10,8 @@ set    shiftwidth=2
 "   show statusline only with 2 or more open windows
 set laststatus=1
 
+let g:copilot_enabled = v:false
+
 set mouse=a
 
 set backupcopy=yes
