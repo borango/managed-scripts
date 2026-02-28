@@ -26,3 +26,5 @@ git@github.com:wissenswandler/wissenswandler.github.io.git
 git@github.com:SV-A-PERFECT-WORLD/www.git
 https://github.com/magjac/d3-graphviz.git
 https://github.com/nvm-sh/nvm.git
+git@codeberg.org/proof/ducktape.git
+
