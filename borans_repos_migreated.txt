@@ -1,0 +1,1 @@
+git@github.com:borango/notes.git --> ssh://git@codeberg.org/proof/notes.git
