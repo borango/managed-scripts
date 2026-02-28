@@ -3,6 +3,10 @@ Host accas
 # HostName 192.168.160.227 # s9 
 # HostName 192.168.43.34   # atom
 
+Host atom
+  Port 8022
+  HostName 10.3.2.222
+
 Host s7
   Port 8022
 # HostName 192.168.127.214 # s9 

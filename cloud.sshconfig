@@ -1,3 +1,6 @@
+Host thinkbox
+  HostName 34.175.128.205
+
 Host wetbox
   HostName 34.31.25.76
 
