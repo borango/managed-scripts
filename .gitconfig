@@ -1,6 +1,6 @@
 [user]
-	email = boran@goegetap.name
-	name  = Boran
+#	email = boran@goegetap.name
+#	name  = Boran
 	signingkey = /home/boran/.ssh/id_rsa.pub
 [alias]
 	pushall         = !git remote | xargs -L1 git push --all
