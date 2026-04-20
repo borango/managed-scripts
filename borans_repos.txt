@@ -17,17 +17,18 @@ git@bitbucket.org:wissenswandler/kts-js.git
 git@bitbucket.org:wissenswandler/nmea.git
 git@bitbucket.org:wissenswandler/mqtt.git
 git@bitbucket.org:wissenswandler/wissenswandler.bitbucket.io.git
-git@github.com:borango/borango.github.io.git
+
 git@github.com:borango/causality-course.git
+git@github.com:borango/managed-scripts.git
+git@github.com:borango/think-twice.git
+
+git@github.com:borango/borango.github.io.git
+git@github.com:SV-A-PERFECT-WORLD/www.git
+git@github.com:Touring-Test/touring-test.github.io.git
+git@github.com:wissenswandler/wissenswandler.github.io.git
 
 git@github.com:borango/books-mono.git
 ssh://git@codeberg.org/proof/books.git
 
-git@github.com:borango/managed-scripts.git
-git@github.com:borango/think-twice.git
-git@github.com:wissenswandler/wissenswandler.github.io.git
-git@github.com:SV-A-PERFECT-WORLD/www.git
-https://github.com/magjac/d3-graphviz.git
-https://github.com/nvm-sh/nvm.git
 ssh://git@codeberg.org/proof/ducktape.git
 ssh://git@codeberg.org/proof/notes.git
