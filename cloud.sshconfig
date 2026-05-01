@@ -1,3 +1,5 @@
+Host hackbox-apw.duckdns.org
+
 Host thinkbox
   HostName 34.175.118.38
 
@@ -13,12 +15,3 @@ Host wind
   Port 2228
   HostName 10.5.4.8
 # HostName cmdbg-14.i234.me
-
-
-#
-# archived
-#
-Host kgo
-  HostName kgo.symsuite.de
-  User kgosymsu
-  Port 222
