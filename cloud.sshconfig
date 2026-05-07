@@ -1,10 +1,13 @@
+# aka 10.9.8.100
 Host hackbox-apw.duckdns.org
 
-Host thinkbox
-  HostName 34.175.118.38
-
+# aka 10.9.8.254
 Host wetbox
   HostName 34.31.25.76
+
+#
+# OFFLINE below
+#
 
 Host nase
   Port 2223
