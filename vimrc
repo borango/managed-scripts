@@ -10,8 +10,6 @@ set    shiftwidth=2
 "   show statusline only with 2 or more open windows
 set laststatus=1
 
-let g:copilot_enabled = v:false
-
 set mouse=a
 
 set backupcopy=yes
@@ -21,6 +19,11 @@ set backupcopy=yes
 :nnoremap <leader>ce :Copilot enable<CR>
 :nnoremap <leader>cd :Copilot disable<CR>
 :inoremap <leader>cd <Esc>:Copilot disable<CR>a
+
+let g:copilot_enabled = v:false
+
+" remember cursor location
+:au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit' | exe "normal! g`\"" | endif
 
 
 "
