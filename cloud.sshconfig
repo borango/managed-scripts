@@ -1,7 +1,7 @@
 # aka 10.9.8.100
 Host hackbox-apw.duckdns.org
 
-# aka 10.9.8.254
+# Wireguard Public Endpoint
 Host wetbox
   HostName 34.31.25.76
 
