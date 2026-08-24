@@ -2,6 +2,12 @@ Host cerbo
   Hostname 10.3.2.48
   User root
 
+Host boatassistantW
+  Hostname 10.9.8.3
+
+Host pideskW
+  Hostname 10.9.8.58
+
 Host pi10bt
   Hostname 10.9.11.1
 Host pi10

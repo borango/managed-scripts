@@ -3,9 +3,12 @@ Host accas
 # HostName 192.168.160.227 # s9 
 # HostName 192.168.43.34   # atom
 
+Host accasW
+  HostName 10.9.8.2
+
 Host atom
   Port 8022
-  HostName 10.3.2.222
+  HostName 10.3.2.17
 
 Host s7
   Port 8022
@@ -15,6 +18,10 @@ Host s7
 # HostName 192.168.178.117 # Gewerbering
 # HostName 192.168.1.114   # Saint-Nic
   HostName 10.3.2.70       # APW
+
+Host s7W
+  Port 8022
+  HostName 10.9.8.70
 
 Host s9
   Port 8022
@@ -26,3 +33,7 @@ Host s9
 # HostName 192.168.1.113   # Saint-Nic
   HostName 10.3.2.90       # APW
 # HostName 192.168.1.102   # A Workshop
+
+Host s9W
+  Port 8022
+  HostName 10.9.8.90

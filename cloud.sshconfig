@@ -3,7 +3,7 @@ Host hackbox-apw.duckdns.org
 
 # Wireguard Public Endpoint
 Host wetbox
-  HostName 34.31.25.76
+  HostName wetbox.duckdns.org
 
 #
 # OFFLINE below
