@@ -8,6 +8,11 @@ Host boatassistantW
 Host pideskW
   Hostname 10.9.8.58
 
+Host sft1200
+    HostName 10.4.3.2
+    User root
+    HostKeyAlgorithms +ssh-rsa
+
 Host pi10bt
   Hostname 10.9.11.1
 Host pi10
