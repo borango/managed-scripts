@@ -1,0 +1,7 @@
+Host fincassistantW
+  HostName 10.9.8.150
+
+# GRID AP via Jumphost
+Host gridW
+  HostName grid.local
+  ProxyJump fincassistantW
