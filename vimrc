@@ -25,6 +25,9 @@ let g:copilot_enabled = v:false
 " remember cursor location
 :au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit' | exe "normal! g`\"" | endif
 
+" improve the chance to catch external edits to an open file
+set autoread
+autocmd FocusGained,BufEnter,CursorHold * checktime
 
 "
 " INCLUDE in ~/.vimrc as follows (uncomment last line):
