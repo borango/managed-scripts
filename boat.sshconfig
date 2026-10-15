@@ -21,3 +21,7 @@ Host sft1200
     HostName 10.3.2.12
     User root
     HostKeyAlgorithms +ssh-rsa
+    # dropbear 2017.75: no ed25519, only SHA-1 RSA signatures
+    PubkeyAcceptedAlgorithms +ssh-rsa
+    IdentityFile ~/.ssh/id_rsa_sft1200
+    IdentitiesOnly yes
